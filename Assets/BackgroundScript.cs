@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BackgroundScript : MonoBehaviour
 {
-    [SerializeField]
-    private float _speed;
+
+    public float speed;
     [SerializeField]
     private Renderer _bgRenderer;
     void Start()
@@ -16,6 +16,6 @@ public class BackgroundScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _bgRenderer.material.mainTextureOffset += new Vector2(0, _speed * Time.deltaTime);
+        _bgRenderer.material.mainTextureOffset += new Vector2(0, speed * Time.deltaTime);
     }
 }

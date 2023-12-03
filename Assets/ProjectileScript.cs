@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-
+    public int damage;
     [SerializeField]
     private float _shootSpeed;
     public int enemiesKilled;
@@ -19,9 +19,9 @@ public class ProjectileScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyScript>().health -= damage;  
             Destroy(this.gameObject);
-            enemiesKilled++;
+      
             //particles effect 
         }
         else if (collision.gameObject.tag == "Boundry")

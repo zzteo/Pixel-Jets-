@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a199739b341e144930a506df2f94a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemiesKilledBeforeChangingDifficulty: 20
+  _enemiesKilledBeforeChangingDifficulty: 5
   _distanceText: {fileID: 1336773809}
   _distanceTravelled: 0
 --- !u!4 &1610094879
@@ -1291,7 +1291,7 @@ Transform:
   m_GameObject: {fileID: 1656464594}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -3.95, z: 0}
+  m_LocalPosition: {x: 0, y: -4.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1729,7 +1729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0789e42d78da542adc647bdb46aa50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.1
+  speed: 0
   _bgRenderer: {fileID: 2046743356}
 --- !u!212 &2046743356
 SpriteRenderer:
@@ -1772,7 +1772,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 952bca91b89c5f04097241fc04e36a2a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb7e14d1b7a1c7047b116c142f7f0427, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
