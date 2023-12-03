@@ -34,4 +34,10 @@ public class buildSetController : MonoBehaviour
     {
 
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "obstacleDestroy"){
+            Destroy(this.gameObject);
+        }
+    }
 }

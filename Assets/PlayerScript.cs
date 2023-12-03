@@ -45,7 +45,17 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Time.timeScale = 0;
+            playerKilled();
         }
+        if (collision.gameObject.tag == "obstacle")
+        {
+            playerKilled();
+        }
+
+    }
+
+    private void playerKilled()
+    {
+        Time.timeScale = 0;
     }
 }

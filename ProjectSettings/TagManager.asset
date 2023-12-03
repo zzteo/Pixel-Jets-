@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Boundry
   - Enemy
+  - obstacleDestroy
+  - obstacle
   layers:
   - Default
   - TransparentFX
