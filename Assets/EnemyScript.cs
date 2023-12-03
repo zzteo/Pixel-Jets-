@@ -22,6 +22,9 @@ public class EnemyScript : MonoBehaviour
 
     private Quaternion targetRotation;
 
+    [SerializeField]
+    private GameObject PowerUp;
+
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -44,8 +47,18 @@ public class EnemyScript : MonoBehaviour
         {
             gameManager.enemiesKilled++;
             gameManager.increasedSpeed = false;
+            ChanceOfSpawningPowerUp(0.1f); //10% of spawnin 
             Destroy(this.gameObject);
+        }
+    }
 
+    private void ChanceOfSpawningPowerUp(float chance)
+    {
+        float randomValue = Random.value; // Random value between 0.0 and 1.0
+
+        if (randomValue <= chance)
+        {
+            Instantiate(PowerUp, this.transform.position, Quaternion.identity);   
         }
     }
 

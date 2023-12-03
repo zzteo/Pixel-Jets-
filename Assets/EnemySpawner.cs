@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (_canSpawn)
         {
-            var enemy = Instantiate(_Enemy, _spawnLocations[Random.RandomRange(0, _spawnLocations.Count)].position, Quaternion.identity);
+            var enemy = Instantiate(_Enemy, _spawnLocations[Random.Range(0, _spawnLocations.Count)].position, Quaternion.identity);
             enemy.transform.parent = this.transform;
             _canSpawn = false;
         }
