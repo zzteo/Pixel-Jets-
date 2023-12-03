@@ -1306,7 +1306,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 967e6a6224f50174a96de29b8da3dace, type: 3}
   m_Color: {r: 0.4362763, g: 0.6615789, b: 0.7169812, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1370,8 +1370,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1394,10 +1394,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _projectilePrefabPowerUp1: {fileID: 69025164577206241, guid: 028d5501c53a93d419de36ba097f880d, type: 3}
   _projectilePrefabPowerUp2: {fileID: 69025164577206241, guid: e72fa1d9e0738b34d8e4d5e2f670b140, type: 3}
-  _projectilePrefabPowerUp3: {fileID: 0}
+  _projectilePrefabPowerUp3: {fileID: 69025164577206241, guid: 028d5501c53a93d419de36ba097f880d, type: 3}
   _projectilePos: {fileID: 1694396959}
-  _projectilePosPowerUp3_1: {fileID: 0}
-  _projectilePosPowerUp3_2: {fileID: 0}
+  _projectilePosPowerUp3_1: {fileID: 1945689241}
+  _projectilePosPowerUp3_2: {fileID: 374294674}
   _projectileDelayPowerUp1: 0.2
   _projectileDelayPowerUp2: 0.5
   _projectileDelayPowerUp3: 0.2
@@ -1434,6 +1434,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1656464598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1710758807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197458258479519395, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7023389086927297624, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
+      propertyPath: m_Name
+      value: obstacleController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a18c5b288f4f6fa4cb095f09ad9d6248, type: 3}
 --- !u!1 &1734239303
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,3 +2105,4 @@ SceneRoots:
   - {fileID: 1865956479}
   - {fileID: 2046743357}
   - {fileID: 949915929}
+  - {fileID: 1710758807}

@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         projectileScript = FindAnyObjectByType<ProjectileScript>();
-        bgScript = FindAnyObjectByType<BackgroundScript>(); 
+        //bgScript = FindAnyObjectByType<BackgroundScript>(); 
     }
 
     private void Update()
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
             if (increasedSpeed == false)
             {
 
-                bgScript.speed += 0.1f;
+                //bgScript.speed += 0.1f;
                 increasedSpeed = true;
             }
             //increase level dificulty 
