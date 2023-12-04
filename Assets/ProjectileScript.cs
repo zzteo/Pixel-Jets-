@@ -6,13 +6,13 @@ public class ProjectileScript : MonoBehaviour
 {
     public int damage;
     [SerializeField]
-    private float _shootSpeed;
+    private float shootSpeed = 10;
     public int enemiesKilled;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up * _shootSpeed * Time.deltaTime);
+        transform.Translate(Vector2.up * shootSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,12 +21,11 @@ public class ProjectileScript : MonoBehaviour
         {
             collision.gameObject.GetComponent<EnemyScript>().health -= damage;  
             Destroy(this.gameObject);
-      
-            //particles effect 
         }
-        else if (collision.gameObject.tag == "Boundry")
+        else if (collision.gameObject.tag == "Boundry" || collision.gameObject.tag == "obstacle")
         {
             Destroy(this.gameObject);
         }
     }
+
 }

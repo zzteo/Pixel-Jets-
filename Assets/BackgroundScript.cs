@@ -7,7 +7,7 @@ public class BackgroundScript : MonoBehaviour
 
     public float speed;
     [SerializeField]
-    private Renderer _bgRenderer;
+    private Renderer bgRenderer;
     void Start()
     {
         
@@ -16,6 +16,6 @@ public class BackgroundScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _bgRenderer.material.mainTextureOffset += new Vector2(0, speed * Time.deltaTime);
+        bgRenderer.material.mainTextureOffset += new Vector2(0, speed * Time.deltaTime);
     }
 }

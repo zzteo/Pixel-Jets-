@@ -9,13 +9,13 @@ public class GameManager : MonoBehaviour
     public BackgroundScript bgScript;
 
     public int enemiesKilled;
-    public int _enemiesKilledBeforeChangingDifficulty;
+    public int enemiesKilledBeforeChangingDifficulty;
 
     [SerializeField]
     private TMP_Text _distanceText;
 
     [SerializeField]
-    private float _distanceTravelled;
+    private float distanceTravelled;
 
     public bool increasedSpeed = false;
 
@@ -27,13 +27,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        _distanceTravelled += (10 * Time.deltaTime);
+        distanceTravelled += (10 * Time.deltaTime);
 
-        _distanceText.SetText("Distance: " + Mathf.RoundToInt(_distanceTravelled).ToString());
+        _distanceText.SetText("Distance: " + Mathf.RoundToInt(distanceTravelled).ToString());
 
-        if (enemiesKilled == _enemiesKilledBeforeChangingDifficulty)
+        if (enemiesKilled == enemiesKilledBeforeChangingDifficulty)
         {
-            _enemiesKilledBeforeChangingDifficulty = 0;
+            enemiesKilledBeforeChangingDifficulty = 0;
 
             if (increasedSpeed == false)
             {

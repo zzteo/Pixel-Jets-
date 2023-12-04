@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 374294673}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56, y: -0.14, z: 0}
+  m_LocalPosition: {x: 0.96, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +328,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7490196, g: 0.8745098, b: 0.8862745, a: 0}
+  m_BackGroundColor: {r: 0.33333334, g: 0.33333334, b: 0.33333334, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1184,9 +1184,9 @@ MonoBehaviour:
   projectileScript: {fileID: 0}
   bgScript: {fileID: 0}
   enemiesKilled: 0
-  _enemiesKilledBeforeChangingDifficulty: 5
+  enemiesKilledBeforeChangingDifficulty: 10
   _distanceText: {fileID: 1336773809}
-  _distanceTravelled: 0
+  distanceTravelled: 0
   increasedSpeed: 0
 --- !u!4 &1610094879
 Transform:
@@ -1305,9 +1305,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 967e6a6224f50174a96de29b8da3dace, type: 3}
-  m_Color: {r: 0.4362763, g: 0.6615789, b: 0.7169812, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1327,7 +1327,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.28, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1694396959}
@@ -1367,7 +1367,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0.0076901615, y: -0.25776637}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1378,7 +1378,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5690715, y: 1.9381995}
   m_EdgeRadius: 0
 --- !u!114 &1656464600
 MonoBehaviour:
@@ -1392,17 +1392,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49c69d9e976e3e4ba5fed70d1194bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilePrefabPowerUp1: {fileID: 69025164577206241, guid: 028d5501c53a93d419de36ba097f880d, type: 3}
-  _projectilePrefabPowerUp2: {fileID: 69025164577206241, guid: e72fa1d9e0738b34d8e4d5e2f670b140, type: 3}
-  _projectilePrefabPowerUp3: {fileID: 69025164577206241, guid: 028d5501c53a93d419de36ba097f880d, type: 3}
-  _projectilePos: {fileID: 1694396959}
-  _projectilePosPowerUp3_1: {fileID: 1945689241}
-  _projectilePosPowerUp3_2: {fileID: 374294674}
-  _projectileDelayPowerUp1: 0.2
-  _projectileDelayPowerUp2: 0.5
-  _projectileDelayPowerUp3: 0.2
+  projectilePrefabPowerUp1: {fileID: 69025164577206241, guid: 028d5501c53a93d419de36ba097f880d, type: 3}
+  projectilePrefabPowerUp2: {fileID: 69025164577206241, guid: e72fa1d9e0738b34d8e4d5e2f670b140, type: 3}
+  projectilePrefabPowerUp3: {fileID: 69025164577206241, guid: 9d6357f10b40c10458004840b56d5a8b, type: 3}
+  projectilePos: {fileID: 1694396959}
+  projectilePosPowerUp3_1: {fileID: 1945689241}
+  projectilePosPowerUp3_2: {fileID: 374294674}
+  projectileDelayPowerUp1: 0.2
+  projectileDelayPowerUp2: 0.5
+  projectileDelayPowerUp3: 0.2
   powerUp: 1
-  _secondsBulletDissapearAfterPowerUp2: 0.5
+  secondsBulletDissapearAfterPowerUp2: 1
 --- !u!1 &1694396958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,7 +1428,7 @@ Transform:
   m_GameObject: {fileID: 1694396958}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.07, z: 0}
+  m_LocalPosition: {x: 0, y: 1.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1730,9 +1730,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211c1df30a062254aa284da8c6964f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnLocations: []
-  _Enemy: {fileID: 8547896593297052872, guid: 0587961231a125742a5468eca677f765, type: 3}
-  _spawnRate: 1
+  spawnLocations: []
+  Enemy: {fileID: 8547896593297052872, guid: 0587961231a125742a5468eca677f765, type: 3}
+  spawnRate: 2
 --- !u!1 &1865956476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1826,7 @@ Transform:
   m_GameObject: {fileID: 1945689240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.57, y: -0.14, z: 0}
+  m_LocalPosition: {x: -1.17, y: 0.2500003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
-  _bgRenderer: {fileID: 2046743356}
+  bgRenderer: {fileID: 0}
 --- !u!212 &2046743356
 SpriteRenderer:
   m_ObjectHideFlags: 0

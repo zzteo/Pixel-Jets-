@@ -38,7 +38,6 @@ public class obstacleController : MonoBehaviour
 
     }
     void spawnObstaclePanel(){
-        Debug.Log("spawn");
         var lastSpawned = Instantiate(buildingSetObj, spawnLocation.position, Quaternion.identity, buildingParent.transform);
         spawnLocation = lastSpawned.GetComponent<buildSetController>().topAttach;
     }

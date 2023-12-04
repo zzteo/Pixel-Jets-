@@ -4,39 +4,41 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<Transform> _spawnLocations;
-    private bool _canSpawn;
+    public List<Transform> spawnLocations;
+    private bool canSpawn;
     [SerializeField]
-    private GameObject _Enemy;
+    private GameObject Enemy;
     [SerializeField]
-    private float _spawnRate;
+    private float spawnRate = 2;
 
     private float timer = 0;
 
     private void Start()
     {
-        foreach(Transform spawnLocations in transform.GetComponentsInChildren<Transform>())
-        {
-            _spawnLocations.Add(spawnLocations);
-        }
+        //adding the spawn locations in a list 
+       for (int i = 0; i < transform.childCount; i++)
+            {
+                Transform childTransform = transform.GetChild(i);
+                spawnLocations.Add(childTransform);
+            }
     }
 
     private void Update()
     {
-        if (_canSpawn)
+        if (canSpawn)
         {
-            var enemy = Instantiate(_Enemy, _spawnLocations[Random.Range(0, _spawnLocations.Count)].position, Quaternion.identity);
+            var enemy = Instantiate(Enemy, spawnLocations[Random.Range(0, spawnLocations.Count)].position, Quaternion.identity);
             enemy.transform.parent = this.transform;
-            _canSpawn = false;
+            canSpawn = false;
         }
 
-        if (!_canSpawn)
+        if (!canSpawn)
         {
             timer += Time.deltaTime;
 
-            if(timer >= _spawnRate)
+            if(timer >= spawnRate)
             {
-                _canSpawn = true;
+                canSpawn = true;
                 timer = 0;
             }
         }

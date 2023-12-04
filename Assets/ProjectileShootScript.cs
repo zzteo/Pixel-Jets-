@@ -5,34 +5,34 @@ using UnityEngine;
 public class ProjectileShootScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _projectilePrefabPowerUp1;
+    private GameObject projectilePrefabPowerUp1;
     [SerializeField]
-    private GameObject _projectilePrefabPowerUp2;
+    private GameObject projectilePrefabPowerUp2;
     [SerializeField]
-    private GameObject _projectilePrefabPowerUp3;
+    private GameObject projectilePrefabPowerUp3;
 
     [SerializeField]
-    private Transform _projectilePos;
+    private Transform projectilePos;
 
     [SerializeField]
-    private Transform _projectilePosPowerUp3_1;
+    private Transform projectilePosPowerUp3_1;
 
     [SerializeField]
-    private Transform _projectilePosPowerUp3_2;
+    private Transform projectilePosPowerUp3_2;
 
     private float timer;
-    private bool _canShoot = true;
+    private bool canShoot = true;
     [SerializeField]
-    private float _projectileDelayPowerUp1;
+    private float projectileDelayPowerUp1;
     [SerializeField]
-    private float _projectileDelayPowerUp2;
+    private float projectileDelayPowerUp2;
     [SerializeField]
-    private float _projectileDelayPowerUp3;
+    private float projectileDelayPowerUp3;
 
     public int powerUp = 1;
 
     [SerializeField]
-    private float _secondsBulletDissapearAfterPowerUp2;
+    private float secondsBulletDissapearAfterPowerUp2;
 
     private void Start()
     {
@@ -41,6 +41,7 @@ public class ProjectileShootScript : MonoBehaviour
 
     private void Update()
     {
+        //the variable powerUp decides which powerup behavior the player will have 
         if (powerUp == 1)
         {
             PowerUp1();
@@ -59,22 +60,22 @@ public class ProjectileShootScript : MonoBehaviour
 
     private void PowerUp1()
     {
-        if (_canShoot)
+        if (canShoot)
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                Instantiate(_projectilePrefabPowerUp1, _projectilePos.position, Quaternion.identity);
-                _canShoot = false;
+                Instantiate(projectilePrefabPowerUp1, projectilePos.position, Quaternion.identity);
+                canShoot = false;
             }
         }
 
-        if (!_canShoot)
+        if (!canShoot)
         {
             timer += Time.deltaTime;
 
-            if (timer >= _projectileDelayPowerUp1)
+            if (timer >= projectileDelayPowerUp1)
             {
-                _canShoot = true;
+                canShoot = true;
                 timer = 0;
             }
         }
@@ -82,33 +83,33 @@ public class ProjectileShootScript : MonoBehaviour
 
     private void PowerUp2()
     {
-        if (_canShoot)
+        if (canShoot)
         {
             if (Input.GetKey(KeyCode.Space))
             {             
-                var bullet1 = Instantiate(_projectilePrefabPowerUp2, _projectilePos.position, Quaternion.identity);
-                var bullet2 = Instantiate(_projectilePrefabPowerUp2, _projectilePos.position, Quaternion.Euler(0f, 0f, -20f));
-                var bullet3 = Instantiate(_projectilePrefabPowerUp2, _projectilePos.position, Quaternion.Euler(0f, 0f, 20f));
-                var bullet4 = Instantiate(_projectilePrefabPowerUp2, _projectilePos.position, Quaternion.Euler(0f, 0f, -10f));
-                var bullet5 = Instantiate(_projectilePrefabPowerUp2, _projectilePos.position, Quaternion.Euler(0f, 0f, 10f));
+                var bullet1 = Instantiate(projectilePrefabPowerUp2, projectilePos.position, Quaternion.identity);
+                var bullet2 = Instantiate(projectilePrefabPowerUp2, projectilePos.position, Quaternion.Euler(0f, 0f, -20f));
+                var bullet3 = Instantiate(projectilePrefabPowerUp2, projectilePos.position, Quaternion.Euler(0f, 0f, 20f));
+                var bullet4 = Instantiate(projectilePrefabPowerUp2, projectilePos.position, Quaternion.Euler(0f, 0f, -10f));
+                var bullet5 = Instantiate(projectilePrefabPowerUp2, projectilePos.position, Quaternion.Euler(0f, 0f, 10f));
 
-                Destroy(bullet1, _secondsBulletDissapearAfterPowerUp2);
-                Destroy(bullet2, _secondsBulletDissapearAfterPowerUp2);
-                Destroy(bullet3, _secondsBulletDissapearAfterPowerUp2);
-                Destroy(bullet4, _secondsBulletDissapearAfterPowerUp2);
-                Destroy(bullet5, _secondsBulletDissapearAfterPowerUp2);
+                Destroy(bullet1, secondsBulletDissapearAfterPowerUp2);
+                Destroy(bullet2, secondsBulletDissapearAfterPowerUp2);
+                Destroy(bullet3, secondsBulletDissapearAfterPowerUp2);
+                Destroy(bullet4, secondsBulletDissapearAfterPowerUp2);
+                Destroy(bullet5, secondsBulletDissapearAfterPowerUp2);
 
-                _canShoot = false;
+                canShoot = false;
             }
         }
 
-        if (!_canShoot)
+        if (!canShoot)
         {
             timer += Time.deltaTime;
 
-            if (timer >= _projectileDelayPowerUp2)
+            if (timer >= projectileDelayPowerUp2)
             {
-                _canShoot = true;
+                canShoot = true;
                 timer = 0;
             }
         }
@@ -116,24 +117,24 @@ public class ProjectileShootScript : MonoBehaviour
 
     private void PowerUp3()
     {
-        if (_canShoot)
+        if (canShoot)
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                Instantiate(_projectilePrefabPowerUp1, _projectilePos.position, Quaternion.identity);
-                Instantiate(_projectilePrefabPowerUp1, _projectilePosPowerUp3_1.position, Quaternion.identity);
-                Instantiate(_projectilePrefabPowerUp1, _projectilePosPowerUp3_2.position, Quaternion.identity);
-                _canShoot = false;
+                Instantiate(projectilePrefabPowerUp3, projectilePos.position, Quaternion.identity);
+                Instantiate(projectilePrefabPowerUp3, projectilePosPowerUp3_1.position, Quaternion.identity);
+                Instantiate(projectilePrefabPowerUp3, projectilePosPowerUp3_2.position, Quaternion.identity);
+                canShoot = false;
             }
         }
 
-        if (!_canShoot)
+        if (!canShoot)
         {
             timer += Time.deltaTime;
 
-            if (timer >= _projectileDelayPowerUp1)
+            if (timer >= projectileDelayPowerUp1)
             {
-                _canShoot = true;
+                canShoot = true;
                 timer = 0;
             }
         }

@@ -8,17 +8,20 @@ public class EnemyScript : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField]
-    private float _minSpeed = .3f;
+    private float minSpeed = .3f;
     [SerializeField]
-    private float _maxSpeed = .5f;
+    private float maxSpeed = .5f;
+
+    [SerializeField]
+    private float rushTowardsPlayerSpeedMultiplier = 5f;
 
     public int health;
 
     [SerializeField]
     private float rotationSpeed = 10f;
 
-    private GameObject _player;
-    private bool _rotateTowardsPlayer;
+    private GameObject player;
+    private bool rotateTowardsPlayer;
 
     private Quaternion targetRotation;
 
@@ -28,16 +31,18 @@ public class EnemyScript : MonoBehaviour
     private void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
-        _player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(Attack());
 
     }
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.down * Random.Range(_minSpeed, _maxSpeed) * Time.deltaTime);
+        //enemy moving down
+        transform.Translate(Vector2.down * Random.Range(minSpeed, maxSpeed) * Time.deltaTime);
 
-        if (_rotateTowardsPlayer)
+        //
+        if (rotateTowardsPlayer)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             Attack1();
@@ -47,14 +52,14 @@ public class EnemyScript : MonoBehaviour
         {
             gameManager.enemiesKilled++;
             gameManager.increasedSpeed = false;
-            ChanceOfSpawningPowerUp(0.1f); //10% of spawnin 
+            ChanceOfSpawningPowerUp(0.1f); //10% of dropping a powerup 
             Destroy(this.gameObject);
         }
     }
 
     private void ChanceOfSpawningPowerUp(float chance)
     {
-        float randomValue = Random.value; // Random value between 0.0 and 1.0
+        float randomValue = Random.value; // Random value between 0 and 1
 
         if (randomValue <= chance)
         {
@@ -66,23 +71,23 @@ public class EnemyScript : MonoBehaviour
     {
 
         // Calculate the direction from the enemy to the player
-        Vector3 direction = _player.transform.position - transform.position;
+        Vector3 direction = player.transform.position - transform.position;
 
-        // Calculate the angle in radians and convert to degrees
+        //getting the direction 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        angle += 90f; // You may need to tweak this value based on your sprite
-
+        angle += 90f;
         targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+        //smoothly rotating towards player direction
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
+    //sets variable rotateTowardsPlayer to true, rotates towards player in Update and it multiplies the speed
     private IEnumerator Attack()
     {
-        yield return new WaitForSeconds(3f);
-        _rotateTowardsPlayer = true;
-        _minSpeed *= 10;
-        _maxSpeed *= 10;
+        yield return new WaitForSeconds(5f);
+        rotateTowardsPlayer = true;
+        minSpeed *= rushTowardsPlayerSpeedMultiplier;
+        maxSpeed *= rushTowardsPlayerSpeedMultiplier;
     }
 }

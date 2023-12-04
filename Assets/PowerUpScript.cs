@@ -8,7 +8,7 @@ public class PowerUpScript : MonoBehaviour
     private Sprite[] powerUpIcon;
 
     [SerializeField]
-    private float _fallingDownSpeed;
+    private float fallingDownSpeed;
 
     private int powerUp;
 
@@ -30,9 +30,11 @@ public class PowerUpScript : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector2.down * _fallingDownSpeed * Time.deltaTime);
+        //moving down
+        transform.Translate(Vector2.down * fallingDownSpeed * Time.deltaTime);
     }
 
+    //sets the power up icon and the powerUp variable accordingly with the power up dropped 
     private void PowerUp1()
     {
         Debug.Log("powerUp 1");
@@ -60,6 +62,7 @@ public class PowerUpScript : MonoBehaviour
         {
             switch (powerUp)
             {
+                //when colliding with the player, it accesses the shooting script and it changes the powerUp variable which will tell the shooting script how to behave 
                 case 1:
                     Debug.Log("powerUp1 active");
                     collision.gameObject.GetComponent<ProjectileShootScript>().powerUp = 1;
