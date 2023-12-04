@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8202066369157495762}
   - component: {fileID: 1925636075085418162}
-  - component: {fileID: 4575707273808347013}
+  - component: {fileID: 2438805643479573681}
   - component: {fileID: 6041493410804882429}
   m_Layer: 0
   m_Name: Projectile
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4575707273808347013
+--- !u!114 &2438805643479573681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  _shootSpeed: 10
+  shootSpeed: 10
   enemiesKilled: 0
 --- !u!61 &6041493410804882429
 BoxCollider2D:
