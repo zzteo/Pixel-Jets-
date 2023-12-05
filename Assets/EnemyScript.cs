@@ -51,7 +51,6 @@ public class EnemyScript : MonoBehaviour
         if(health <= 0)
         {
             gameManager.enemiesKilled++;
-            gameManager.increasedSpeed = false;
             ChanceOfSpawningPowerUp(0.1f); //10% of dropping a powerup 
             Destroy(this.gameObject);
         }

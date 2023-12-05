@@ -7,9 +7,10 @@ public class EnemySpawner : MonoBehaviour
     public List<Transform> spawnLocations;
     private bool canSpawn;
     [SerializeField]
-    private GameObject Enemy;
-    [SerializeField]
-    private float spawnRate = 2;
+    private GameObject[] Enemy;
+
+
+    public float spawnRate = 2;
 
     private float timer = 0;
 
@@ -27,7 +28,8 @@ public class EnemySpawner : MonoBehaviour
     {
         if (canSpawn)
         {
-            var enemy = Instantiate(Enemy, spawnLocations[Random.Range(0, spawnLocations.Count)].position, Quaternion.identity);
+            //randomly instantiates a random enemy at a random spawn Location
+            var enemy = Instantiate(Enemy[Random.Range(0, Enemy.Length)], spawnLocations[Random.Range(0, spawnLocations.Count)].position, Quaternion.identity);
             enemy.transform.parent = this.transform;
             canSpawn = false;
         }

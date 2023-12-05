@@ -19,8 +19,16 @@ public class ProjectileScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<EnemyScript>().health -= damage;  
-            Destroy(this.gameObject);
+            if (collision.gameObject.GetComponent<EnemyScript>() != null)
+            {
+                collision.gameObject.GetComponent<EnemyScript>().health -= damage;
+                Destroy(this.gameObject);
+            }  
+            else
+            {
+                collision.gameObject.GetComponent<Enemy2Script>().health -= damage;
+            }
+
         }
         else if (collision.gameObject.tag == "Boundry" || collision.gameObject.tag == "obstacle")
         {

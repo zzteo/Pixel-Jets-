@@ -7,8 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public ProjectileScript projectileScript;
     public BackgroundScript bgScript;
+    public EnemySpawner enemySpawner;
 
     public int enemiesKilled;
+    private int previousEnemiesKilled;
     public int enemiesKilledBeforeChangingDifficulty;
 
     [SerializeField]
@@ -17,11 +19,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float distanceTravelled;
 
-    public bool increasedSpeed = false;
-
     private void Start()
     {
         projectileScript = FindAnyObjectByType<ProjectileScript>();
+        enemySpawner = FindAnyObjectByType<EnemySpawner>();
         //bgScript = FindAnyObjectByType<BackgroundScript>(); 
     }
 
@@ -31,20 +32,18 @@ public class GameManager : MonoBehaviour
 
         _distanceText.SetText("Distance: " + Mathf.RoundToInt(distanceTravelled).ToString());
 
-        if (enemiesKilled == enemiesKilledBeforeChangingDifficulty)
+        if (enemiesKilled - previousEnemiesKilled >= enemiesKilledBeforeChangingDifficulty)
         {
-            enemiesKilledBeforeChangingDifficulty = 0;
+            //call the function to update game difficulty
+            enemySpawner.spawnRate -= 0.3f;
+            //increase bg speed
+            //increase enemy speed
 
-            if (increasedSpeed == false)
-            {
 
-                //bgScript.speed += 0.1f;
-                increasedSpeed = true;
-            }
-            //increase level dificulty 
-            //increase background speed
-            //increase enemy speed 
+            //update previousEnemiesKilled to the current value
+            previousEnemiesKilled = enemiesKilled;
         }
+
     }
    
 }

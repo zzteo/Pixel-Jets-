@@ -1183,11 +1183,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileScript: {fileID: 0}
   bgScript: {fileID: 0}
+  enemySpawner: {fileID: 0}
   enemiesKilled: 0
   enemiesKilledBeforeChangingDifficulty: 10
   _distanceText: {fileID: 1336773809}
   distanceTravelled: 0
-  increasedSpeed: 0
 --- !u!4 &1610094879
 Transform:
   m_ObjectHideFlags: 0
@@ -1731,8 +1731,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLocations: []
-  Enemy: {fileID: 8547896593297052872, guid: 0587961231a125742a5468eca677f765, type: 3}
-  spawnRate: 2
+  Enemy:
+  - {fileID: 8547896593297052872, guid: 0587961231a125742a5468eca677f765, type: 3}
+  - {fileID: 8547896593297052872, guid: 54700e658507e1e43af8f13e39b624c6, type: 3}
+  spawnRate: 4
 --- !u!1 &1865956476
 GameObject:
   m_ObjectHideFlags: 0
