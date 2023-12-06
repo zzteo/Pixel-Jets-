@@ -16,15 +16,17 @@ public class buildSetController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        for(int x = 0; x < buildingPositions.transform.childCount; x++)
+        var tempCounter = 0;
+        for (int x = 0; x < buildingPositions.transform.childCount; x++)
         {
             _spawnLocations.Add(buildingPositions.transform.GetChild(x).GetComponent<Transform>());
-
+            
             var temp = UnityEngine.Random.Range(0, 2);
-            if (temp >= 1)
+            if (temp >= 1 && tempCounter <2)
             {
                 Instantiate(buildingObj, _spawnLocations[x].position, Quaternion.identity, _spawnLocations[x]);
+                tempCounter++;
+                Debug.Log("test" + tempCounter);
             }
         }
     }

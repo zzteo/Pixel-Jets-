@@ -21,7 +21,7 @@ public class testProjectileScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyScript>().health -= damage;
-            Instantiate(hitParticle, transform.position, Quaternion.identity);
+            Instantiate(hitParticle, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "obstacle")

@@ -100,8 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  _shootSpeed: 10
+  shootSpeed: 10
   enemiesKilled: 0
+  hitParticle: {fileID: 4895014473965311723, guid: bd4056af44705d3479510f174c2a0629, type: 3}
 --- !u!61 &6041493410804882429
 BoxCollider2D:
   m_ObjectHideFlags: 0

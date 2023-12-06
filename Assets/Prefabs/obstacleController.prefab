@@ -186,6 +186,7 @@ MonoBehaviour:
   buildingSetObj: {fileID: 386894423148955481, guid: aab7614a7bad9f54eaae2c1a75e342be, type: 3}
   buildingParent: {fileID: 4872222751204573858}
   spawnLocation: {fileID: 5283311970531234955}
+  scrollSpeed: 1
 --- !u!1 &7812635757150866291
 GameObject:
   m_ObjectHideFlags: 0

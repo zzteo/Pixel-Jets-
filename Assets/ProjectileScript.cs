@@ -8,7 +8,8 @@ public class ProjectileScript : MonoBehaviour
     [SerializeField]
     private float shootSpeed = 10;
     public int enemiesKilled;
-
+    [SerializeField]
+    private GameObject hitParticle;
     // Update is called once per frame
     void Update()
     {
@@ -22,18 +23,27 @@ public class ProjectileScript : MonoBehaviour
             if (collision.gameObject.GetComponent<EnemyScript>() != null)
             {
                 collision.gameObject.GetComponent<EnemyScript>().health -= damage;
+                Instantiate(hitParticle, transform.position, transform.rotation);
                 Destroy(this.gameObject);
             }  
             else
             {
                 collision.gameObject.GetComponent<Enemy2Script>().health -= damage;
+                Instantiate(hitParticle, transform.position, transform.rotation);
+                Destroy(this.gameObject);
             }
 
         }
-        else if (collision.gameObject.tag == "Boundry" || collision.gameObject.tag == "obstacle")
+        else if (collision.gameObject.tag == "obstacle")
+        {
+            Instantiate(hitParticle, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "Boundry")
         {
             Destroy(this.gameObject);
         }
+        
     }
 
 }
