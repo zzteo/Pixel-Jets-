@@ -84,7 +84,7 @@ public class EnemyScript : MonoBehaviour
     //sets variable rotateTowardsPlayer to true, rotates towards player in Update and it multiplies the speed
     private IEnumerator Attack()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         rotateTowardsPlayer = true;
         minSpeed *= rushTowardsPlayerSpeedMultiplier;
         maxSpeed *= rushTowardsPlayerSpeedMultiplier;
