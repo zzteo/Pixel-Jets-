@@ -8,6 +8,11 @@ public class PlayerScript : MonoBehaviour
     public Rigidbody2D rigidBody;
     Vector2 move;
 
+    public int health = 3;
+
+    [SerializeField]
+    GameObject livesIcons;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,17 +35,26 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            playerKilled();
+            TakeDamage();
         }
         if (collision.gameObject.tag == "obstacle")
         {
-            playerKilled();
+            TakeDamage();
         }
-
     }
 
-    private void playerKilled()
+    public void TakeDamage()
     {
-        Time.timeScale = 0;
+        health--;
+        //destroys a life icon 
+        Destroy(livesIcons.transform.GetChild(0).gameObject);
+
+        if (health == 0)
+        {
+            Debug.Log("Game Over");
+            Time.timeScale = 0;
+        }
     }
+    
+   
 }

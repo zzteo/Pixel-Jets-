@@ -51,7 +51,6 @@ public class EnemyScript : MonoBehaviour
         if(health <= 0)
         {
             gameManager.enemiesKilled++;
-            gameManager.increasedSpeed = false;
             ChanceOfSpawningPowerUp(0.1f); //10% of dropping a powerup 
             Destroy(this.gameObject);
         }
@@ -85,7 +84,7 @@ public class EnemyScript : MonoBehaviour
     //sets variable rotateTowardsPlayer to true, rotates towards player in Update and it multiplies the speed
     private IEnumerator Attack()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         rotateTowardsPlayer = true;
         minSpeed *= rushTowardsPlayerSpeedMultiplier;
         maxSpeed *= rushTowardsPlayerSpeedMultiplier;
