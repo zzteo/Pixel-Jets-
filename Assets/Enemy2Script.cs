@@ -5,15 +5,15 @@ using UnityEngine;
 public class Enemy2Script : MonoBehaviour
 {
     [SerializeField]
-    float speed;
+    float speed = 2f;
     [SerializeField]
-    float range;
+    float range = 0.1f;
     [SerializeField]
-    float maxDistance;
+    float maxDistance = 8f;
 
     Vector2 wayPoint;
 
-    public int health = 1;
+    public int health = 3;
 
     [SerializeField]
     GameManager gameManager;
@@ -29,7 +29,7 @@ public class Enemy2Script : MonoBehaviour
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed - Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, wayPoint, speed * Time.deltaTime);
 
         if(Vector2.Distance(transform.position, wayPoint) < range)
         {
@@ -46,7 +46,7 @@ public class Enemy2Script : MonoBehaviour
 
     private void SetNewDestination()
     {
-        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(-maxDistance/3 +1f, maxDistance/3 +1f));
+        wayPoint = new Vector2(Random.Range(-maxDistance, maxDistance), Random.Range(maxDistance + 2f, maxDistance + 4f));
     }
 
     private void ChanceOfSpawningPowerUp(float chance)

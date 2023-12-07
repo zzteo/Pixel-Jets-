@@ -11,15 +11,16 @@ public class GameManager : MonoBehaviour
     public obstacleController obstacleController;
 
     public int enemiesKilled;
-    private int previousEnemiesKilled;
     public int enemiesKilledBeforeChangingDifficulty;
+
+    [SerializeField]
+    private float PointsPerKill = 100f;
 
     [SerializeField]
     private TMP_Text _distanceText;
 
-    [SerializeField]
+    
     private float distanceTravelled;
-
     private float localScrollSpeed;
 
     private void Start()
@@ -35,19 +36,8 @@ public class GameManager : MonoBehaviour
         localScrollSpeed = obstacleController.scrollSpeed;
         distanceTravelled += ((5 * localScrollSpeed) * Time.deltaTime);
 
-        _distanceText.SetText("Distance: " + Mathf.RoundToInt(distanceTravelled).ToString());
+        _distanceText.SetText(Mathf.RoundToInt(distanceTravelled + (enemiesKilled * PointsPerKill)).ToString());
 
-        if (enemiesKilled - previousEnemiesKilled >= enemiesKilledBeforeChangingDifficulty)
-        {
-            //call the function to update game difficulty
-            //enemySpawner.spawnRate -= 0.3f;
-            //increase bg speed
-            //increase enemy speed
-
-
-            //update previousEnemiesKilled to the current value
-            previousEnemiesKilled = enemiesKilled;
-        }
 
     }
    

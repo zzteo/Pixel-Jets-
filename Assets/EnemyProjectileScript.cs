@@ -17,9 +17,6 @@ public class EnemyProjectileScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        else if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerScript>().TakeDamage();
-        }
+        
     }
 }

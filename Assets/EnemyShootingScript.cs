@@ -14,7 +14,7 @@ public class EnemyShootingScript : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("Shoot", 3f, shootingDelay);
+        InvokeRepeating("Shoot", 2f, shootingDelay);
     }
     private void Shoot()
     {

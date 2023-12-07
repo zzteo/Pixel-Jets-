@@ -8,12 +8,12 @@ public class EnemyScript : MonoBehaviour
     GameManager gameManager;
 
     [SerializeField]
-    private float minSpeed = .3f;
+    private float minSpeed = 0.5f;
     [SerializeField]
-    private float maxSpeed = .5f;
+    private float maxSpeed = 0.75f;
 
     [SerializeField]
-    private float rushTowardsPlayerSpeedMultiplier = 5f;
+    private float rushTowardsPlayerSpeedMultiplier = 10f;
 
     public int health;
 
@@ -84,7 +84,7 @@ public class EnemyScript : MonoBehaviour
     //sets variable rotateTowardsPlayer to true, rotates towards player in Update and it multiplies the speed
     private IEnumerator Attack()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         rotateTowardsPlayer = true;
         minSpeed *= rushTowardsPlayerSpeedMultiplier;
         maxSpeed *= rushTowardsPlayerSpeedMultiplier;
