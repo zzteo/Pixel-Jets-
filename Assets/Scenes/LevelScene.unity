@@ -2777,7 +2777,7 @@ MonoBehaviour:
   Enemy:
   - {fileID: 8547896593297052872, guid: 0587961231a125742a5468eca677f765, type: 3}
   - {fileID: 8547896593297052872, guid: 54700e658507e1e43af8f13e39b624c6, type: 3}
-  spawnRate: 6
+  spawnRate: 3
 --- !u!1 &1865956476
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject[] Enemy;
 
 
-    public float spawnRate = 6;
+    public float spawnRate = 3f;
 
     private float timer = 0;
 
