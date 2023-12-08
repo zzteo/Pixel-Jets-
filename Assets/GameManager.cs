@@ -11,33 +11,35 @@ public class GameManager : MonoBehaviour
     public obstacleController obstacleController;
 
     public int enemiesKilled;
-    public int enemiesKilledBeforeChangingDifficulty;
+    public float PointsPerKill = 100f;
 
     [SerializeField]
-    private float PointsPerKill = 100f;
-
-    [SerializeField]
-    private TMP_Text _distanceText;
+    private TMP_Text distanceText;
 
     
-    private float distanceTravelled;
+    public float distanceTravelled;
     private float localScrollSpeed;
-
+    public int score;
+    public int highScoreSave = 100;
+    
     private void Start()
     {
         projectileScript = FindAnyObjectByType<ProjectileScript>();
         enemySpawner = FindAnyObjectByType<EnemySpawner>();
         obstacleController = FindAnyObjectByType<obstacleController>();
-        //bgScript = FindAnyObjectByType<BackgroundScript>(); 
+         
     }
 
     private void Update()
     {
         localScrollSpeed = obstacleController.scrollSpeed;
         distanceTravelled += ((5 * localScrollSpeed) * Time.deltaTime);
-
-        _distanceText.SetText(Mathf.RoundToInt(distanceTravelled + (enemiesKilled * PointsPerKill)).ToString());
-
+        score = Mathf.RoundToInt(distanceTravelled + (enemiesKilled * PointsPerKill));
+        distanceText.SetText(score.ToString());
+        if (score > highScoreSave)
+        {
+            highScoreSave = score;
+        }
 
     }
    

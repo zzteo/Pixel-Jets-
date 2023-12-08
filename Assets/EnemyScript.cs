@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     public int health;
 
     [SerializeField]
-    private float rotationSpeed = 10f;
+    private float rotationSpeed = 1f;
 
     private GameObject player;
     private bool rotateTowardsPlayer;

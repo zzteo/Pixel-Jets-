@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainmenuScript : MonoBehaviour
+public class MenuScript : MonoBehaviour
 {
     public void playButton()
     {

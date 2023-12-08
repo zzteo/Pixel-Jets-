@@ -99,9 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpIcon:
-  - {fileID: 21300000, guid: 92453a1f7d066cd4798711678e291f2d, type: 3}
-  - {fileID: 21300000, guid: f0de4c327aa1c164c999739c81e51ad1, type: 3}
-  - {fileID: 21300000, guid: 88776cbdc44191a42ace42e9c8439ab9, type: 3}
+  - {fileID: 21300000, guid: 7ccbf607a3821594fbb15c1e9814ef26, type: 3}
+  - {fileID: 21300000, guid: 601fad3a8fefaad488b35ad57218acf0, type: 3}
+  - {fileID: 21300000, guid: 352056a6765df7e48b99991a91bdf1d7, type: 3}
   fallingDownSpeed: 2
 --- !u!61 &6567920921202715219
 BoxCollider2D:
